@@ -1,4 +1,4 @@
-name: cicd
+name: CI
 on:
   pull_request:
     branches:
@@ -11,7 +11,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
         with:
-          ref: 'main'
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Install Python
         uses: actions/setup-python@v5
