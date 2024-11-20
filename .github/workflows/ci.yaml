@@ -1,12 +1,10 @@
 name: cicd
-on: push
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  hello:
-    runs-on: ubuntu-latest
-    steps:
-      - name: hello step
-        run: pwd
 
   setup:
     runs-on: ubuntu-latest
